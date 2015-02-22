@@ -3,7 +3,6 @@ package utils;
  * Created by WZQ on 15-2-4.
  */
 
-import android.util.Log;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;

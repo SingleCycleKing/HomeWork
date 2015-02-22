@@ -9,7 +9,7 @@ import java.util.List;
 import model.WordModel;
 
 public interface WordParser {
-    public List<WordModel> parse(InputStream inputStream) throws Exception;
+    public abstract List<WordModel> parse(InputStream inputStream) throws Exception;
 
-    public String serialize(List<WordModel> wordModels) throws Exception;
+    public abstract String serialize(List<WordModel> wordModels) throws Exception;
 }
