@@ -1,12 +1,9 @@
 package com.cycle.single.task;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.text.Editable;
+import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,15 +11,13 @@ import android.widget.SearchView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import adapter.WordsAdapter;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import model.WordModel;
 import utils.AnalyzeXml;
-import utils.DebugLog;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -36,6 +31,11 @@ public class MainActivity extends ActionBarActivity {
     @InjectView(R.id.search_view)
     SearchView searchView;
 
+    @OnClick(R.id.translate)
+    void translate() {
+        startActivity(new Intent(MainActivity.this, TranslateActivity.class));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void init() {
+        translate();
         try {
             InputStream inputStream = this.getAssets().open("cet4.xml");
             AnalyzeXml analyzeXml = new AnalyzeXml();
