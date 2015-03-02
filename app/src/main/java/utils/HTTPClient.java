@@ -1,6 +1,7 @@
 package utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -15,6 +16,7 @@ import org.json.JSONObject;
  */
 public class HTTPClient {
     public static String AnalyzingOfJson(String url, Context context) throws Exception {
+
         HttpGet httpGet = new HttpGet(url);
         HttpResponse httpResponse = new DefaultHttpClient().execute(httpGet);
         if (httpResponse.getStatusLine().getStatusCode() == 200) {
@@ -77,9 +79,10 @@ public class HTTPClient {
                     }
                 }
             }
+
             return message;
         } else {
-            Toast.makeText(context, "提取异常", Toast.LENGTH_SHORT);
+            Toast.makeText(context, "提取异常", Toast.LENGTH_SHORT).show();
             return "No Data!";
         }
     }

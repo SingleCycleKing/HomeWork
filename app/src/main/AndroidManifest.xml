@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cycle.single.task" >
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +18,11 @@
         </activity>
         <activity
             android:name=".WordActivity"
-            android:label="@string/title_activity_word" >
+            android:label="单词" >
+        </activity>
+        <activity
+            android:name=".TranslateActivity"
+            android:label="翻译" >
         </activity>
     </application>
 

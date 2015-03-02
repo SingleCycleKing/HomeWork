@@ -45,7 +45,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void init() {
-        translate();
         try {
             InputStream inputStream = this.getAssets().open("cet4.xml");
             AnalyzeXml analyzeXml = new AnalyzeXml();
